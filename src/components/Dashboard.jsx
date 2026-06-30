@@ -72,8 +72,8 @@ export default function Dashboard() {
             alt="Sean"
             className="rounded-full"
             style={{
-              width: '48px',
-              height: '48px',
+              width: '200px',
+              height: '200px',
               objectFit: 'cover',
               border: '2px solid rgba(124,58,237,0.5)',
               boxShadow: '0 0 20px rgba(124,58,237,0.35)',

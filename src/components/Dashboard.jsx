@@ -1,7 +1,7 @@
 // Dashboard.jsx
 import { useState, useEffect } from 'react'
 import heroImage from '../assets/Background.jpg'
-import avatarImage from '../assets/avatar.jpg'
+import avatarImage from '../assets/PictureofMe.jpg'
 
 export default function Dashboard() {
   const [scrollY, setScrollY] = useState(0)

@@ -36,7 +36,6 @@ export default function Projects() {
     }
   }
 
-  // Re-enable transition on the next frame after snapping back
   useEffect(() => {
     if (!isTransitioning) {
       const id = requestAnimationFrame(() => {
@@ -49,11 +48,15 @@ export default function Projects() {
   const goToSlide = (i) => {
     setIsTransitioning(true)
     setIndex(i)
-    startAutoplay() // reset the timer so it doesn't jump right after a manual click
+    startAutoplay()
   }
 
   return (
-    <section id="projects" className="p-10" style={{ background: '#0a0a14' }}>
+    <section
+      id="projects"
+      className="p-10 flex flex-col items-center text-center"
+      style={{ background: '#0a0a14' }}
+    >
       <h2
         ref={titleRef}
         className="text-3xl font-bold mb-8"
@@ -87,7 +90,7 @@ export default function Projects() {
           {slides.map((p, i) => (
             <div key={i} className="w-full flex-shrink-0 px-2">
               <div
-                className="p-5 rounded-xl"
+                className="p-5 rounded-xl text-center"
                 style={{
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(124, 58, 237, 0.2)',

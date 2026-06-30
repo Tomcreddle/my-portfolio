@@ -16,10 +16,14 @@ export default function About() {
   const [skillsRef, skillsVisible] = useScrollReveal()
 
   return (
-    <section id="about" className="px-10 py-20 flex flex-col items-center text-center" style={{ background: '#0a0a14' }}>
+    <section
+      id="about"
+      className="px-4 md:px-10 py-12 md:py-20 flex flex-col items-center text-center"
+      style={{ background: '#0a0a14' }}
+    >
       <h2
         ref={titleRef}
-        className="text-3xl font-bold mb-6"
+        className="text-2xl md:text-3xl font-bold mb-4 md:mb-6"
         style={{
           color: '#ffffff',
           opacity: titleVisible ? 1 : 0,
@@ -32,7 +36,7 @@ export default function About() {
 
       <p
         ref={textRef}
-        className="text-base leading-relaxed mb-10 max-w-3xl mx-auto"
+        className="text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto"
         style={{
           color: '#cbd5e1',
           opacity: textVisible ? 1 : 0,
@@ -47,11 +51,11 @@ export default function About() {
         building responsive, user-friendly applications using React.js, Node.js, and Firebase/AWS DynamoDB.
       </p>
 
-      <h3 className="text-lg font-semibold mb-4" style={{ color: '#a78bfa' }}>
+      <h3 className="text-base md:text-lg font-semibold mb-4" style={{ color: '#a78bfa' }}>
         Skills
       </h3>
 
-      <div ref={skillsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <div ref={skillsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto w-full">
         {skills.map((skill, i) => (
           <div
             key={skill.category}
@@ -68,7 +72,7 @@ export default function About() {
             <h4 className="font-semibold text-sm mb-1" style={{ color: '#a78bfa' }}>
               {skill.category}
             </h4>
-            <p className="text-sm" style={{ color: '#94a3b8' }}>
+            <p className="text-xs md:text-sm" style={{ color: '#94a3b8' }}>
               {skill.items}
             </p>
           </div>

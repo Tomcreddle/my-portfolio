@@ -1,47 +1,51 @@
+// Navbar.jsx
 export default function Navbar() {
   const tabs = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
-  ];
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Contact', href: '#contact' },
+  ]
 
   return (
-    <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
-      <div className="flex justify-between items-center px-8 py-4 rounded-2xl border border-purple-500/20 bg-[#0b0b16]/80 backdrop-blur-xl shadow-lg shadow-purple-900/20">
-        
-        <h1 className="text-2xl font-bold tracking-wide">
-          <span className="text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,.7)]">
-            My Portfolio
-          </span>
-          <span className="text-white">.</span>
-        </h1>
+    <nav
+      className="flex justify-between items-center px-4 md:px-10 py-3 md:py-4 fixed w-full top-0 left-0 z-50"
+      style={{
+        background: 'rgba(10, 10, 20, 0.85)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(139, 92, 246, 0.15)',
+      }}
+    >
+      <h1 className="font-bold text-base md:text-xl tracking-wide" style={{ color: '#a78bfa' }}>
+        My Portfolio <span style={{ color: '#ffffff' }}>.</span>
+      </h1>
 
-        <div className="flex items-center gap-4">
-          {tabs.map((tab) => (
-            <a
-              key={tab.label}
-              href={tab.href}
-              className="
-                px-6 py-2
-                rounded-full
-                border border-purple-500/30
-                bg-purple-500/10
-                text-slate-300
-                font-medium
-                transition-all duration-300
-                hover:bg-purple-600
-                hover:text-white
-                hover:border-purple-400
-                hover:-translate-y-1
-                hover:shadow-[0_0_20px_rgba(168,85,247,.45)]
-              "
-            >
-              {tab.label}
-            </a>
-          ))}
-        </div>
+      <div className="flex items-center gap-1 md:gap-3">
+        {tabs.map((tab) => (
+          <a
+            key={tab.label}
+            href={tab.href}
+            className="text-xs md:text-sm font-medium px-2 md:px-4 py-1.5 md:py-2 rounded-lg transition-all duration-300"
+            style={{
+              color: '#cbd5e1',
+              border: '1px solid transparent',
+              background: 'transparent',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#a78bfa'
+              e.currentTarget.style.border = '1px solid rgba(124, 58, 237, 0.5)'
+              e.currentTarget.style.background = 'rgba(124, 58, 237, 0.08)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#cbd5e1'
+              e.currentTarget.style.border = '1px solid transparent'
+              e.currentTarget.style.background = 'transparent'
+            }}
+          >
+            {tab.label}
+          </a>
+        ))}
       </div>
     </nav>
-  );
+  )
 }

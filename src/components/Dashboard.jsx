@@ -1,7 +1,7 @@
 // Dashboard.jsx
 import { useState, useEffect } from 'react'
 import heroImage from '../assets/Background.jpg'
-import avatarImage from '../assets/PictureofMe.jpg' // update this to your actual icon/profile pic filename
+import avatarImage from '../assets/avatar.jpg'
 
 export default function Dashboard() {
   const [scrollY, setScrollY] = useState(0)
@@ -15,10 +15,9 @@ export default function Dashboard() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden"
       style={{ background: '#0a0a14' }}
     >
-      {/* Background image - parallax, fixed to not stretch */}
       <div
         className="absolute inset-0"
         style={{
@@ -33,7 +32,6 @@ export default function Dashboard() {
         }}
       />
 
-      {/* Dark overlay so text stays readable */}
       <div
         className="absolute inset-0"
         style={{
@@ -41,14 +39,15 @@ export default function Dashboard() {
         }}
       />
 
-      {/* Glow blob */}
       <div
         style={{
           position: 'absolute',
           top: '20%',
           left: '50%',
-          width: '500px',
-          height: '500px',
+          width: '300px',
+          height: '300px',
+          maxWidth: '80vw',
+          maxHeight: '80vw',
           borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)',
           transform: `translate(-50%, ${scrollY * 0.6}px)`,
@@ -56,34 +55,32 @@ export default function Dashboard() {
         }}
       />
 
-      {/* Foreground content */}
       <div
-        className="relative z-10"
+        className="relative z-10 w-full"
         style={{
           opacity: Math.max(1 - scrollY / 500, 0),
           transform: `translateY(${scrollY * 0.15}px)`,
         }}
       >
-        <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#7c3aed' }}>
+        <p className="text-xs md:text-sm font-semibold tracking-widest uppercase mb-3 md:mb-4" style={{ color: '#7c3aed' }}>
           Available for Work
         </p>
 
-        {/* Avatar + Name row */}
-        <div className="flex items-center justify-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 mb-3 md:mb-4">
           <img
             src={avatarImage}
             alt="Sean"
             className="rounded-full"
             style={{
-              width: '200px',
-              height: '200px',
+              width: '48px',
+              height: '48px',
               objectFit: 'cover',
-              border: '2px solid rgba(85, 65, 120, 0.5)',
-              boxShadow: '0 0 20px rgba(100, 79, 135, 0.35)',
+              border: '2px solid rgba(124,58,237,0.5)',
+              boxShadow: '0 0 20px rgba(124,58,237,0.35)',
             }}
           />
           <h1
-            className="text-5xl md:text-6xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
             style={{
               background: 'linear-gradient(135deg, #ffffff 0%, #a78bfa 100%)',
               WebkitBackgroundClip: 'text',
@@ -94,18 +91,18 @@ export default function Dashboard() {
           </h1>
         </div>
 
-        <p className="text-lg mb-2" style={{ color: '#94a3b8' }}>
+        <p className="text-base md:text-lg mb-2 px-2" style={{ color: '#94a3b8' }}>
           IT Graduate · Full-Stack Developer
         </p>
 
-        <p className="text-sm mb-10 tracking-wide" style={{ color: '#64748b' }}>
+        <p className="text-xs md:text-sm mb-8 md:mb-10 tracking-wide px-2" style={{ color: '#64748b' }}>
           React · Vite · Tailwind · Android · Data Analytics
         </p>
 
-        <div className="flex items-center gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 justify-center px-4">
           <a
             href="#projects"
-            className="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
+            className="w-full sm:w-auto text-center px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
             style={{
               background: 'linear-gradient(135deg, #7c3aed, #6d28d9)',
               color: '#ffffff',
@@ -119,7 +116,7 @@ export default function Dashboard() {
 
           <a
             href="#contact"
-            className="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
+            className="w-full sm:w-auto text-center px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
             style={{
               border: '1px solid rgba(124,58,237,0.5)',
               color: '#a78bfa',

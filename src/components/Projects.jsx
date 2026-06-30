@@ -54,12 +54,12 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="p-10 flex flex-col items-center text-center"
+      className="px-4 md:p-10 py-12 md:py-10 flex flex-col items-center text-center"
       style={{ background: '#0a0a14' }}
     >
       <h2
         ref={titleRef}
-        className="text-3xl font-bold mb-8"
+        className="text-2xl md:text-3xl font-bold mb-6 md:mb-8"
         style={{
           color: '#ffffff',
           opacity: titleVisible ? 1 : 0,
@@ -72,7 +72,7 @@ export default function Projects() {
 
       <div
         ref={carouselRef}
-        className="overflow-hidden max-w-sm mx-auto"
+        className="overflow-hidden w-full max-w-xs sm:max-w-sm mx-auto"
         style={{
           opacity: carouselVisible ? 1 : 0,
           transform: carouselVisible ? 'translateX(0)' : 'translateX(-40px)',
@@ -90,7 +90,7 @@ export default function Projects() {
           {slides.map((p, i) => (
             <div key={i} className="w-full flex-shrink-0 px-2">
               <div
-                className="p-5 rounded-xl text-center"
+                className="p-4 md:p-5 rounded-xl text-center"
                 style={{
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(124, 58, 237, 0.2)',
@@ -98,10 +98,10 @@ export default function Projects() {
                   minHeight: '120px',
                 }}
               >
-                <h3 className="font-bold text-base mb-1" style={{ color: '#a78bfa' }}>
+                <h3 className="font-bold text-sm md:text-base mb-1" style={{ color: '#a78bfa' }}>
                   {p.name}
                 </h3>
-                <p className="text-sm" style={{ color: '#94a3b8' }}>
+                <p className="text-xs md:text-sm" style={{ color: '#94a3b8' }}>
                   {p.desc}
                 </p>
               </div>

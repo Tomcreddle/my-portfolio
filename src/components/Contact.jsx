@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [status, setStatus] = useState(null) // null | 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState(null)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -32,23 +32,23 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="p-10 flex flex-col items-center text-center"
+      className="px-4 md:p-10 py-12 md:py-10 flex flex-col items-center text-center"
       style={{ background: '#0a0a14' }}
     >
-      <h2 className="text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>
+      <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>
         Contact
       </h2>
-      <p className="text-sm mb-8" style={{ color: '#94a3b8' }}>
+      <p className="text-xs md:text-sm mb-6 md:mb-8" style={{ color: '#94a3b8' }}>
         Got a project in mind? Send me a message.
       </p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md w-full mx-auto">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3 md:gap-4 w-full max-w-md mx-auto">
         <input
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          className="p-3 rounded-lg text-sm outline-none transition-all duration-300"
+          className="p-3 rounded-lg text-sm outline-none transition-all duration-300 w-full"
           placeholder="Name"
           style={{
             background: 'rgba(255, 255, 255, 0.03)',
@@ -71,7 +71,7 @@ export default function Contact() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="p-3 rounded-lg text-sm outline-none transition-all duration-300"
+          className="p-3 rounded-lg text-sm outline-none transition-all duration-300 w-full"
           placeholder="Email"
           style={{
             background: 'rgba(255, 255, 255, 0.03)',
@@ -94,7 +94,7 @@ export default function Contact() {
           onChange={handleChange}
           required
           rows={5}
-          className="p-3 rounded-lg text-sm outline-none transition-all duration-300 resize-none"
+          className="p-3 rounded-lg text-sm outline-none transition-all duration-300 resize-none w-full"
           placeholder="Message"
           style={{
             background: 'rgba(255, 255, 255, 0.03)',
@@ -114,7 +114,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="p-3 rounded-lg text-sm font-semibold transition-all duration-300"
+          className="p-3 rounded-lg text-sm font-semibold transition-all duration-300 w-full"
           style={{
             background: 'linear-gradient(135deg, #7c3aed, #6d28d9)',
             color: '#ffffff',
